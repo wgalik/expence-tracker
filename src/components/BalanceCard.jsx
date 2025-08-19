@@ -1,7 +1,8 @@
+import ChartCard from "./ChartCard";
 import TableRow from "./TableRow";
 
 const BalanceCard = (props) => {
-  const { balance, transactions } = props;
+  const { balance, transactions,outcomeOptions } = props;
 
   const sortedTransactions = transactions
     .map((transaction) => transaction)
@@ -23,11 +24,18 @@ const BalanceCard = (props) => {
   return (
     <div className="col-md-7 card  balance">
       <div className="card-body">
-        <h5>Balance</h5>
-        <h3 style={style}>{balance} &#8364;</h3>
-        <h5>
-          Transactions {transactions.length ? `: ${transactions.length}` : null}
-        </h5>
+        <div className="row">
+          <div className="col col-lg-4">
+            <h5>Balance</h5>
+            <h3 style={style}>{balance} &#8364;</h3>
+            <h5>
+              Transactions {transactions.length ? `: ${transactions.length}` : null}
+            </h5>
+          </div>
+                <div  className="col">
+          <ChartCard transactions={transactions} outcomeOptions={outcomeOptions}/>
+                </div>
+        </div>
 
         {/* Tabela */}
         <div className="table-responsive-md">

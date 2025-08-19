@@ -11,19 +11,10 @@ const AddForm = (props) => {
     submit,
     mainCategory,
     outputCategory,
-    date,
+    date, outcomeOptions
   } = props;
 
-  const outcomeOptions = [
-    { value: "Other", selected: true },
-    { value: "Transport" },
-    { value: "Housing and Utilities" },
-    { value: "Entertainment" },
-    { value: "Health and Beauty" },
-    { value: "Education" },
-    { value: "Clothing" },
-    { value: "Travel" },
-  ];
+ 
 
   const options = outcomeOptions.map((option) => (
     <option

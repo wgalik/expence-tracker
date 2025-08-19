@@ -1,6 +1,6 @@
 const TableRow = (props) => {
   const { description, date, category, outcomeCategory, amount } = props;
-  console.log(outcomeCategory);
+ 
 
   const tableCategory = category === "Income" ? category : outcomeCategory;
 
