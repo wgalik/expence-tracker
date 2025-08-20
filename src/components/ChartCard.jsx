@@ -16,7 +16,7 @@ const colors = [
   "#FFD580",
 ];
 
-export default function ChartCart({ transactions, outcomeOptions }) {
+export default function ChartCart({ transactions, subOptions }) {
   let income = 0,
     foodAndDrinks = 0,
     transport = 0,
@@ -27,12 +27,12 @@ export default function ChartCart({ transactions, outcomeOptions }) {
     clothing = 0,
     other = 0;
 
-  let labels = outcomeOptions.map((option) => option.value);
+  let labels = subOptions.map((option) => option.value);
   labels = ["Income", ...labels];
 
   transactions.forEach((transaction) => {
     if (transaction.mainCategory === "Income") income += transaction.amount;
-    if (transaction.mainCategory === "Outcome") {
+    if (transaction.mainCategory === "Expense") {
       switch (transaction.outcomeCategory) {
         case "Food and Drinks":
           foodAndDrinks -= transaction.amount;

@@ -9,12 +9,12 @@ const AddForm = (props) => {
     change,
     submit,
     mainCategory,
-    outputCategory,
+    expenseCategory,
     date,
-    outcomeOptions,
+    subOptions,
   } = props;
 
-  const options = outcomeOptions.map((option) => (
+  const options = subOptions.map((option) => (
     <option
       key={option.value}
       value={option.value}
@@ -95,7 +95,7 @@ const AddForm = (props) => {
               onChange={({ target }) => change(target)}
             >
               <option value="Income">Income</option>
-              <option value="Outcome">Outcome</option>
+              <option value="Expense">Expense</option>
             </select>
             <select
               id="options"
@@ -103,7 +103,7 @@ const AddForm = (props) => {
               className="form-select mt-2"
               aria-label="Options select"
               disabled={mainCategory === "Income" ? true : false}
-              value={outputCategory}
+              value={expenseCategory}
               onChange={({ target }) => change(target)}
             >
               {options}

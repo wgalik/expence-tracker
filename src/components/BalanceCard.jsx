@@ -2,7 +2,7 @@ import ChartCard from "./ChartCard";
 import TableRow from "./TableRow";
 
 const BalanceCard = (props) => {
-  const { balance, transactions, outcomeOptions } = props;
+  const { balance, transactions, subOptions } = props;
 
   const sortedTransactions = transactions
     .map((transaction) => transaction)
@@ -33,10 +33,7 @@ const BalanceCard = (props) => {
             </h5>
           </div>
           <div className="col d-flex justify-content-start ">
-            <ChartCard
-              transactions={transactions}
-              outcomeOptions={outcomeOptions}
-            />
+            <ChartCard transactions={transactions} subOptions={subOptions} />
           </div>
         </div>
 

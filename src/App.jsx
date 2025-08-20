@@ -13,7 +13,7 @@ function App() {
 
   const [balance, setBalance] = useState(0);
 
-  const outcomeOptions = [
+  const subOptions = [
     { value: "Other", selected: true },
     { value: "Food and Drinks" },
     { value: "Transport" },
@@ -46,7 +46,7 @@ function App() {
     let number = amount.toFixed(2);
     number *= 1;
     let text = description.trim();
-    if (number && mainCategory === "Outcome") number *= -1;
+    if (number && mainCategory === "Expense") number *= -1;
     const transaction = {
       id: transactions.length,
       date,
@@ -77,8 +77,8 @@ function App() {
             description={description}
             amount={amount}
             mainCategory={mainCategory}
-            outputCategory={outcomeCategory}
-            outcomeOptions={outcomeOptions}
+            expenseCategory={outcomeCategory}
+            subOptions={subOptions}
             change={handleChange}
             submit={addTransaction}
           />
@@ -86,7 +86,7 @@ function App() {
           <BalanceCard
             transactions={transactions}
             balance={balance}
-            outcomeOptions={outcomeOptions}
+            subOptions={subOptions}
           />
         </div>
       </div>

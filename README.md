@@ -11,11 +11,11 @@ This project helps users manage their income and expenses, track categories, and
   - Description
   - Amount
   - Date
-  - Category (Income or Outcome)
+  - Category (Income or Expense)
   - Subcategory for expenses (e.g., Food, Transport, Education, etc.)
 - 📊 Visualize spending with a **doughnut chart** (Chart.js).
-- 📑 View all transactions in a **responsive table**.
-- 💵 Automatic balance calculation.
+- 📑 View and track all transactions in a **responsive table**.
+- 💵 Balance updates automatically based on transactions.
 - ✅ Form validation with user-friendly feedback (Bootstrap).
 - 🎨 Clean and responsive UI.
 
