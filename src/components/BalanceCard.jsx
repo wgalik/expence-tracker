@@ -2,7 +2,7 @@ import ChartCard from "./ChartCard";
 import TableRow from "./TableRow";
 
 const BalanceCard = (props) => {
-  const { balance, transactions,outcomeOptions } = props;
+  const { balance, transactions, outcomeOptions } = props;
 
   const sortedTransactions = transactions
     .map((transaction) => transaction)
@@ -19,27 +19,30 @@ const BalanceCard = (props) => {
     />
   ));
   const style = balance < 0 ? { color: "red" } : null;
-  console.log(sortedTransactions);
 
   return (
     <div className="col-md-7 card  balance">
       <div className="card-body">
         <div className="row">
-          <div className="col col-lg-4">
+          <div className="col col-lg-5 col-xl-4">
             <h5>Balance</h5>
-            <h3 style={style}>{balance} &#8364;</h3>
+            <h3 style={style}>{balance.toFixed(2)} &#8364;</h3>
             <h5>
-              Transactions {transactions.length ? `: ${transactions.length}` : null}
+              Transactions{" "}
+              {transactions.length ? `: ${transactions.length}` : null}
             </h5>
           </div>
-                <div  className="col">
-          <ChartCard transactions={transactions} outcomeOptions={outcomeOptions}/>
-                </div>
+          <div className="col d-flex justify-content-start ">
+            <ChartCard
+              transactions={transactions}
+              outcomeOptions={outcomeOptions}
+            />
+          </div>
         </div>
 
         {/* Tabela */}
         <div className="table-responsive-md">
-          <table className="table align-middle">
+          <table className="table ">
             <thead>
               <tr>
                 <th scope="col">Date</th>

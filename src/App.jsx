@@ -2,8 +2,6 @@ import { useState } from "react";
 import AddForm from "./components/AddForm";
 import BalanceCard from "./components/BalanceCard";
 
-import "./App.css";
-
 function App() {
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
@@ -15,16 +13,15 @@ function App() {
 
   const [balance, setBalance] = useState(0);
 
-   const outcomeOptions = [
+  const outcomeOptions = [
     { value: "Other", selected: true },
-    { value: "Food and Drinks"},
+    { value: "Food and Drinks" },
     { value: "Transport" },
     { value: "Housing and Utilities" },
     { value: "Entertainment" },
     { value: "Health and Beauty" },
     { value: "Education" },
     { value: "Clothing" },
-   
   ];
 
   const handleChange = (target) => {
@@ -86,7 +83,11 @@ function App() {
             submit={addTransaction}
           />
 
-          <BalanceCard transactions={transactions} balance={balance} outcomeOptions={outcomeOptions}/>
+          <BalanceCard
+            transactions={transactions}
+            balance={balance}
+            outcomeOptions={outcomeOptions}
+          />
         </div>
       </div>
     </>

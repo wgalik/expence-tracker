@@ -1,6 +1,5 @@
 const TableRow = (props) => {
   const { description, date, category, outcomeCategory, amount } = props;
- 
 
   const tableCategory = category === "Income" ? category : outcomeCategory;
 

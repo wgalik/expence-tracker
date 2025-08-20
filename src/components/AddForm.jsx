@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const AddForm = (props) => {
-  //   console.log(props);
   const [validated, setValidated] = useState(false);
 
   const {
@@ -11,10 +10,9 @@ const AddForm = (props) => {
     submit,
     mainCategory,
     outputCategory,
-    date, outcomeOptions
+    date,
+    outcomeOptions,
   } = props;
-
- 
 
   const options = outcomeOptions.map((option) => (
     <option
@@ -37,9 +35,6 @@ const AddForm = (props) => {
       submit();
       setValidated(false);
     }
-
-    //   event.preventDefault();
-    //   submit();
   };
 
   return (
